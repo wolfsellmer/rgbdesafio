@@ -1,73 +1,48 @@
-//window.addEventListener('load', start)
+window.addEventListener('load', start)
 
 
-// const redColor = null
-// const greenColor = null
-// const blueColor = null
-// const red = null
-// const green = null
-// const blue = null
-// const rgbResult = null
-
-
-
-// function start(){
-//     red = document.querySelector('#r');
-//     green = document.querySelector('#g');
-//     blue = document.querySelector('#b');
-
-//     redColor = document.querySelector('#redValue');
-//     greenColor = document.querySelector('#greenValue');
-//     blueColor = document.querySelector('#blueValue');
-
-//     rgbResult = document.querySelector('#rgb');
-
-//     redColor.addEventListener('input', rgbColor);
-//     greenColor.addEventListener('input',rgbColor);
-//     blueColor.addEventListener('input', rgbColor);
-//     rgbColor()
-// }
-
-// function rgbColor(){
-//     const cRed = parseInt(redColor.value, 10);
-//     const cGreen = parseInt(greenColor.value, 10);
-//     const cBlue = parseInt(blueColor.value, 10);
-
-//     redColor.value = cRed;
-//     greenColor.value = cGreen;
-//     blueColor.value = cBlue;
-
-//     const rgbNew = 'rgb('+ cRed + ',' + cGreen + ',' + cBlue + ')';
-
-//     rgbResult.style.backgroundColor = rgbNew
-// }
-// start();
+let redColor = null
+let greenColor = null
+let blueColor = null
+let red = null
+let green = null
+let blue = null
+let rgbResult = null
+let rgbNew = null
 
 
 
-const red = document.querySelector('#r')
-const green = document.querySelector('#g')
-const blue = document.querySelector('#b')
-const redColor = document.querySelector('#redValue')
-const greenColor = document.querySelector('#greenValue')
-const blueColor = document.querySelector('#blueValue')
-const rgbResult = document.querySelector('#rgb')
+function start(){
+    red = document.querySelector('#r');
+    green = document.querySelector('#g');
+    blue = document.querySelector('#b');
 
+    redValue = document.querySelector('#redValue');
+    greenValue = document.querySelector('#greenValue');
+    blueValue = document.querySelector('#blueValue');
 
-red.oninput = ()=>{
-    redColor.value = parseInt(red.value)
-    rgbResult.value = 'rgb(' + parseInt(redColor.value)+ ',' +parseInt(greenColor.value)+ ',' + parseInt(blueColor.value) +')'
-    document.getElementById("rgb").style.backgroundColor = rgbResult.value
+    rgbResult = document.querySelector('#rgb');
+
+    red.addEventListener('input', rgbColor);
+    green.addEventListener('input',rgbColor);
+    blue.addEventListener('input', rgbColor);
+   
+
+    rgbColor()
 }
-green.oninput = ()=>{
-    greenColor.value = parseInt(green.value)
-    rgbResult.value = 'rgb(' + parseInt(redColor.value)+ ',' +parseInt(greenColor.value)+ ',' + parseInt(blueColor.value) +')'
-    document.getElementById("rgb").style.backgroundColor = rgbResult.value
-}
-blue.oninput = ()=>{
-    blueColor.value = parseInt(blue.value)
-    rgbResult.value = 'rgb(' + parseInt(redColor.value)+ ',' +parseInt(greenColor.value)+ ',' + parseInt(blueColor.value) +')'
-    
-    document.getElementById("rgb").style.backgroundColor = rgbResult.value
 
+function rgbColor(){
+    let cRed = parseInt(red.value, 10);
+    let cGreen = parseInt(green.value, 10);
+    let cBlue = parseInt(blue.value, 10);
+
+    redValue.value = cRed;
+    greenValue.value = cGreen;
+    blueValue.value = cBlue;
+
+    rgbNew = 'rgb('+ cRed + ',' + cGreen + ',' + cBlue + ')';
+
+    rgbResult.style.backgroundColor = rgbNew
 }
+start();
+
